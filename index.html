@@ -1,0 +1,62 @@
+<!-- 
+  Pomodoro Timer
+  © 2026 Rohini Devi Beegoo. All rights reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Pomodoro Timer</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="app">
+            <h1>Pomodoro Timer</h1>
+            <p class="subtitle">Turn the dial to set your focus stretch, then start.</p>
+
+            <input class="task-input" id="taskInput" type="text" placeholder="what are you working on?" maxlength="60" aria-label="Current task">
+
+            <div class="dial-wrap" id="dialWrap">
+                <svg viewBox="0 0 300 300" aria-hidden="false" role="slider"
+                    aria-label="Timer duration" tabindex="0"
+                    id="dialSvg" aria-valuemin="1" aria-valuemax="60">
+
+                    <circle class="track" cx="150" cy="150" r="118"></circle>
+
+                    <g id="ticks"></g>
+                    
+                    <circle class="ring-track" cx="150" cy="150" r="118"></circle>
+
+                    <circle class="ring-progress" id="ringProgress" cx="150" cy="150" r="118"></circle>
+
+                    <circle class="handle" id="handle" r="9" cx="150" cy="32"></circle>
+                </svg>
+
+                <div class="center-text">
+                    <div class="readout" id="readout">25:00</div>
+                    <div class="mode-label" id="modeLabel">focus</div>
+                    <div class="hint" id="hint">drag the ring to set duration</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="resetBtn" aria-label="Reset timer">Reset</button>
+                <button class="primary" id="startBtn" aria-label="Start timer">Start</button>
+            </div>
+
+            <div class="dots" id="dots" aria-label="Completed focus sessions"></div>
+            
+            <footer class="site-footer">© 2026 Rohini Devi Beegoo</footer>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
